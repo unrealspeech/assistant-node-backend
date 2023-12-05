@@ -8,7 +8,7 @@ async function createAssistant(req, res) {
     const assistant = await openai.beta.assistants.create({
       name: "Assistant",
       instructions:
-        "You are a personal assistant, always ensure answers are very concise and short. Write and run code to answer user question",
+        "You are a personal assistant, always ensure answers are very concise and short, also avoid returning asterics (*). Write and run code to answer user question",
       tools: [{ type: "code_interpreter" }],
       model: "gpt-4-1106-preview",
     });
